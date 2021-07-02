@@ -1,5 +1,5 @@
-<p>Reister works!</p>
-<!-- <div class="inner">
+<div class="outer">
+  <div class="inner">
     <div class="div-form">
       <div class="FunDooNotes">
         <div>
@@ -15,7 +15,7 @@
         <br>
           <span class="create">Create your FunDooNotes Account</span>
       </div>
-      <form class="RegisterForm"  >
+      <form class="RegisterForm" [formGroup]="registerForm" (ngSubmit)=" registerForm.valid && register()" >
         
           <div class="form-container"> 
             
@@ -102,11 +102,12 @@
   
     <div class="div-icon">
       <div class="dash">
-        <img class="dash-icon" width="244" height="244" id="" src="../../../assets/images/account.svg">
+        <img class="dash-icon" width="244" height="244" id="" src="../../../assets/account.svg">
         <span class="dasp-span">One account. All of Google working for you.</span>
       </div>
     </div>
-  </div> -->
+  </div>
 
  
 
+</div>

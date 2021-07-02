@@ -19,7 +19,7 @@
       <span>Use your FunDooNotes Account</span>
     </div>
     
-    <form  class="child loginForm" >
+    <form  [formGroup]="loginForm" class="child loginForm" (ngSubmit)="loginForm.valid && login()" >
      
           <div class="email" id="loginEmail">
             <mat-form-field class="user" appearance="outline">
