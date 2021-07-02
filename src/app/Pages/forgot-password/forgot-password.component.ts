@@ -54,6 +54,7 @@ export class ForgotPasswordComponent implements OnInit {
       let reqData ={
         Email: this.ForgetForm.get('email')?.value+this.EmailTld,
       }
+      //
       // this.userSevice.ForgetPassword(reqData).subscribe(
       //   (response: any) => {
       //     this.openSnackBar('password reset link has been sent to your registered email', 2000);
