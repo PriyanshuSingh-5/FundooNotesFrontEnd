@@ -18,7 +18,7 @@
     <div class="child use">
       <span>Use your FunDooNotes Account</span>
     </div>
-    
+    <!-- form group -->
     <form  [formGroup]="loginForm" class="child loginForm" (ngSubmit)="loginForm.valid && login()" >
      
           <div class="email" id="loginEmail">
@@ -59,7 +59,7 @@
             <div class="forget">
               <a [routerLink]="['/ForgetPassword']" >
               Forgot password?
-              </a>
+             </a> 
             </div>
             <div class="submit-btn">
               <button type="submit" mat-raised-button >Login</button>

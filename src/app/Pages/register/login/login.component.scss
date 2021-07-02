@@ -5,7 +5,7 @@ body {
   line-height: 1.4286;
   margin: 0;
   font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
-  padding: 0;
+  padding: 0; //padding is done
 }
 .btns{
   margin-top: 30px;
@@ -42,7 +42,7 @@ a{
   flex-direction: column;
   border: 1px solid #DADCE0;
   border-radius: 7px;
-  width: 400px;
+  width: 300px;
   padding: 30px;
   margin: auto;
   margin-top: 85px;
