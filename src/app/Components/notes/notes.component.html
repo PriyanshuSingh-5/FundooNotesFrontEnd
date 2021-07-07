@@ -1,0 +1,10 @@
+<p>notes works!</p>
+<mat-card class="cn-card ">
+
+    <div class="card-title"  *ngIf="fullEdit">
+        <input class="title-in font" matInput placeholder="Title" id="title" #title >
+        <div class="pin-div" (click)="togglePin()" matTooltip="Pin note" matTooltipPosition='below'>
+            <div role="button" class="pin" [ngClass]="pin ? 'pinned-back' : 'unpinned-back'"> 
+            </div>
+        </div>
+    </div>

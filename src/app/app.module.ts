@@ -15,9 +15,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { NotesComponent } from './Components/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotesComponent
     
   ],
   imports: [
@@ -35,6 +38,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatCheckboxModule,
+    MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
