@@ -42,24 +42,32 @@
   
     <div class="content">
       <mat-toolbar>
+        <img class="dash-icon"  src="../../../assets/keep_2020q4_48dp.png">
         <h4>Keep</h4>
-        <!-- <span class="menu-spacer"></span> -->
+        <span class="menu-spacer"></span>
         <span class="fill-remaining-space"></span>
-    
+         
+        <!-- <mat-list-item >
+          <-- <span class="material-icons-outlined">search</span> -->
+          <!-- <mat-icon class ="My-icon">search</mat-icon>
+        </mat-list-item>  -->
+
+        <mat-form-field appearance="outline" class="search example-full-width noWrapper">
+          <mat-icon matPrefix>search</mat-icon>
+          <input type="search" matInput placeholder="Search">
+          <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+
         <mat-list-item >
-          <span class="material-icons-outlined">search</span>
+          <mat-icon class ="vap-icon">refresh</mat-icon>
         </mat-list-item>
 
         <mat-list-item >
-          <span class="material-icons-outlined">refresh</span>
-        </mat-list-item>
-
-        <mat-list-item >
-          <span class="material-icons-outlined">settings</span>
+          <mat-icon class ="vap-icon">settings</mat-icon>
         </mat-list-item>
    
         <mat-list-item >
-          <span class="material-icons-outlined">view_agenda</span>
+          <mat-icon class ="vap-icon">view_agenda</mat-icon>
         </mat-list-item>
       
 
@@ -72,6 +80,7 @@
       <mat-list-item >
         <span class="material-icons-outlined">account_circle</span>
       </mat-list-item>
+    
 
      
         <!-- <mat-list-item [routerLink]="'dashboard'">
