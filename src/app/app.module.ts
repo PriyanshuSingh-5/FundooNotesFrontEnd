@@ -11,7 +11,13 @@ import { LoginComponent } from './Pages/login/login.component';
 import { ForgotPasswordComponent } from './Pages/forgot-password/forgot-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,8 @@ import { ResetPasswordComponent } from './Pages/reset-password/reset-password.co
     RegisterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent
     
   ],
   imports: [
@@ -30,6 +37,11 @@ import { ResetPasswordComponent } from './Pages/reset-password/reset-password.co
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
     MatSnackBarModule
   ],
   providers: [],

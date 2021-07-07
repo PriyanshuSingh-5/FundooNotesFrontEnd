@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+mat-sidenav-container {
+    height: 100%;
+  
+    mat-sidenav {
+  
+      mat-nav-list {
+  
+        .menu {
+          transition: 300ms ease-in-out;
+          transform: rotate(0deg);
+          right: 0;
+          float: right;
+          position: absolute;
+        }
+  
+        // .menu.rotated {
+        //   transform: rotate(180deg);
+        // }
+      }
+
+    }
+  }
+  mat-toolbar {
+    .fill-remaining-space {
+      flex: 1 1 auto;
+    }
+  }
+  .vap-icon
+  {
+    padding: 0 10px;
+  }
+  

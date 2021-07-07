@@ -28,9 +28,7 @@ export class LoginComponent implements OnInit {
     public snackBar: MatSnackBar, private route: Router) { 
     this.loginForm = this.formBuilder.group(
       {
-        email: new FormControl('', [Validators.required, 
-          Validators.pattern('^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*$')
-        ]),
+        email: new FormControl(''),
         password:  new FormControl('', [Validators.required, 
           Validators.pattern('^(?=.{8,20}$)(?=.*[\\d])(?=.*[A-Z])[\\w]*[\\W][\\w]*$')
         ]),}
@@ -60,6 +58,8 @@ export class LoginComponent implements OnInit {
         Email: this.loginForm.get('email')?.value+this.EmailTld,
         password: this.loginForm.get('password')?.value
       }
+
+
       // this.userSevice.login(reqData).subscribe(
       //   (response: any) => {
       //     localStorage.setItem('FunDooNotesJWT', response['token']);

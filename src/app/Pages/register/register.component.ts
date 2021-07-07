@@ -2,9 +2,7 @@ import { Component, OnInit ,ViewChild, ElementRef, ViewEncapsulation } from '@an
 import {FormBuilder, FormGroupDirective, FormControl, NgForm, FormGroup, PatternValidator, Validators,} from '@angular/forms';
 import { ErrorStateMatcher, } from '@angular/material/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {
-    MatSnackBarConfig
-} from '@angular/material/snack-bar';
+import { MatSnackBarConfig} from '@angular/material/snack-bar';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -25,11 +23,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
   matcher = new MyErrorStateMatcher();
   public isActive: boolean;
   public notSame: boolean;

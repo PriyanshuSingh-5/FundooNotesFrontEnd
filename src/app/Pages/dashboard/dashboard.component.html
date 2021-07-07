@@ -1,0 +1,86 @@
+<p>dashboard works!</p>
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
+  
+        <mat-list-item>
+          <mat-icon mat-list-icon class="menu sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">menu</mat-icon>
+        </mat-list-item>
+  
+        <mat-list-item >
+          <span class="material-icons-outlined">lightbulb</span>
+          <span *ngIf="isExpanded">Notes</span>
+        </mat-list-item>
+
+        <!-- <button mat-button >
+          <span class="material-icons-outlined">edit
+            </span>
+            <span>edit</span>
+      </button> -->
+  
+        <mat-list-item >
+          <span class="material-icons-outlined">edit
+          </span>
+          <span *ngIf="isExpanded">edit Label </span>
+        </mat-list-item>
+  
+        
+
+        <mat-list-item >
+          <span class="material-icons-outlined">archive</span>
+          <span *ngIf="isExpanded">Archive</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <span class="material-icons-outlined">delete</span>
+          <span *ngIf="isExpanded">Bin</span>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <div class="content">
+      <mat-toolbar>
+        <h4>Keep</h4>
+        <!-- <span class="menu-spacer"></span> -->
+        <span class="fill-remaining-space"></span>
+    
+        <mat-list-item >
+          <span class="material-icons-outlined">search</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <span class="material-icons-outlined">refresh</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <span class="material-icons-outlined">settings</span>
+        </mat-list-item>
+   
+        <mat-list-item >
+          <span class="material-icons-outlined">view_agenda</span>
+        </mat-list-item>
+      
+
+        <!-- <span class="fill-remaining-space"></span> -->
+     
+        <mat-list-item >
+          <mat-icon class ="vap-icon">apps</mat-icon>
+        </mat-list-item>
+
+      <mat-list-item >
+        <span class="material-icons-outlined">account_circle</span>
+      </mat-list-item>
+
+     
+        <!-- <mat-list-item [routerLink]="'dashboard'">
+          <mat-icon mat-list-icon >delete</mat-icon>
+          <span *ngIf="isExpanded">Bin</span>
+        </mat-list-item> -->
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-sidenav-container>
+  
