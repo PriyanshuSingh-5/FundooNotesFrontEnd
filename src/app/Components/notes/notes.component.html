@@ -1,10 +1,34 @@
 <p>notes works!</p>
 <mat-card class="cn-card ">
 
-    <div class="card-title"  *ngIf="fullEdit">
+    <div class="card-title" >
         <input class="title-in font" matInput placeholder="Title" id="title" #title >
-        <div class="pin-div" (click)="togglePin()" matTooltip="Pin note" matTooltipPosition='below'>
-            <div role="button" class="pin" [ngClass]="pin ? 'pinned-back' : 'unpinned-back'"> 
+        <div class="pin-div"  matTooltip="Pin note" matTooltipPosition='below'>
+            <div role="button" class="pin" > 
             </div>
         </div>
     </div>
+
+    <!-- <div class="iconsPanel">
+        <button mat-button class="material-icons-outlined iconClass">
+          <mat-icon [inline]="true">notification_add</mat-icon>
+        </button>
+        <button mat-button class="material-icons-outlined iconClass">
+          <mat-icon [inline]="true">person_add</mat-icon>
+        </button>
+        <button mat-button class="material-icons-outlined iconClass" (click)="onColorPalleteClick()">
+          <mat-icon [inline]="true">palette</mat-icon>
+        </button>
+         <button mat-button class="material -->
+        <!-- <button mat-button class="material-icons-outlined iconClass" >
+          <mat-icon [inline]="true">photo</mat-icon>
+        </button>
+        <button mat-button class="material-icons-outlined iconClass" (click)="onArchieveClick()">
+          <mat-icon [inline]="true">archive</mat-icon>
+        </button>
+        <button mat-button class="material-icons-outlined iconClass" (click)="onMoreMenuClick()">
+          <mat-icon [inline]="true">more_vert</mat-icon>
+        </button>
+    </div>
+
+</mat-card> --> 

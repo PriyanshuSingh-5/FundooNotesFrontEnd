@@ -23,6 +23,21 @@ mat-sidenav-container {
     }
   }
 
+  ::ng-deep .mat-form-field-infix
+  {
+    padding: 0 0 0 0 !important;
+    
+  }
+  
+  ::ng-deep .mat-form-field{ 
+    height: 60px;
+    width: 700px;
+
+  }
+  ::ng-deep .mat-form-field-outline {
+
+    background: #f1f3f4 !important;
+  }
   .search { 
 
     mat-icon {
@@ -34,6 +49,7 @@ mat-sidenav-container {
   
     }
   }
+  
   .My-icon
   {
     width: 50px;

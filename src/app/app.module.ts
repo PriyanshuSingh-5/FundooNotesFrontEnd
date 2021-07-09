@@ -20,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { NotesComponent } from './Components/notes/notes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,13 @@ import { NotesComponent } from './Components/notes/notes.component';
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
+    MatCardModule,
     MatDividerModule,
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { NotesComponent } from 'src/app/Components/notes/notes.component';
 
 @Component({
   selector: 'app-dashboard',

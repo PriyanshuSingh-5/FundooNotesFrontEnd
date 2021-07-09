@@ -3,6 +3,7 @@ import {FormBuilder, FormGroupDirective, FormControl, NgForm, FormGroup, Pattern
 import { ErrorStateMatcher, } from '@angular/material/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatSnackBarConfig} from '@angular/material/snack-bar';
+import { UserService } from 'src/app/Services/user.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -33,8 +34,10 @@ export class RegisterComponent implements OnInit {
   autoHide: number = 10000;
   
   addExtraClass: boolean = false;
+  myForm: any;
+  service: any;
   constructor(private formBuilder:FormBuilder, 
-    public snackBar: MatSnackBar) { 
+    public snackBar: MatSnackBar,private userservices: UserService) { 
     
     this.registerForm = this.formBuilder.group(
       {
@@ -45,7 +48,7 @@ export class RegisterComponent implements OnInit {
           Validators.pattern('^[A-Z][a-z]{2,}$')
         ],),
         email: new FormControl('', [Validators.required, 
-          Validators.pattern('^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*$')
+          Validators.pattern('')
         ]),
         password:  new FormControl('', [Validators.required, 
           Validators.pattern('^(?=.{8,20}$)(?=.*[\\d])(?=.*[A-Z])[\\w]*[\\W][\\w]*$')
@@ -67,20 +70,29 @@ export class RegisterComponent implements OnInit {
     this.snackBar.open(message, undefined, config);
   }
 
+ // get f() {return this.myForm.controls;}
   ngOnInit(): void {
     
   }
-  register(){
+
+  
+  //register = (registerForm: { firstName: any; lastName: any; email: any; password: any; }) => {
+    register(){
     
     if(this.registerForm.valid){
       this.openSnackBar('Registering user...', 0);
       let reqData ={
-        firstName: this.registerForm.get('firstName')?.value,
-        LastName: this.registerForm.get('lastName')?.value,
-        Email: this.registerForm.get('email')?.value+this.EmailTld,
-        password: this.registerForm.get('password')?.value
+        "firstName": this.registerForm.get('firstName')?.value,
+        "lastName": this.registerForm.get('lastName')?.value,
+        "email": this.registerForm.get('email')?.value+this.EmailTld,
+        "password": this.registerForm.get('password')?.value
       }
       
+      
+      this.userservices.registeration(reqData).subscribe((data: any) => {
+        console.log(data);
+        this.snackBar.open("Registration Successful","Exit")
+      })
       // this.userSevice.registerUser(reqData).subscribe(
       //   response => {
       //     console.log("register successfull", response);
@@ -94,7 +106,7 @@ export class RegisterComponent implements OnInit {
       //       this.openSnackBar('Registration failed: '+error['error']['message'], 2000);
       //     }
       //   }
-        // );
+      //   );
     } 
   } 
 
@@ -110,6 +122,7 @@ export class RegisterComponent implements OnInit {
 }
 
 }
+
 
 
 

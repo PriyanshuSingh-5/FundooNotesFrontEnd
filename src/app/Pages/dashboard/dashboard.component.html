@@ -52,11 +52,19 @@
           <!-- <mat-icon class ="My-icon">search</mat-icon>
         </mat-list-item>  -->
 
-        <mat-form-field appearance="outline" class="search example-full-width noWrapper">
-          <mat-icon matPrefix>search</mat-icon>
-          <input type="search" matInput placeholder="Search">
-          <mat-icon matSuffix></mat-icon>
-        </mat-form-field>
+        
+
+        <div>
+          <mat-form-field class="Search" appearance="outline" #search>
+            <mat-icon matPrefix>search</mat-icon>
+              <input matInput placeholder="Search" name="Search" >
+              <!-- <button mat-button  matSuffix mat-icon-button aria-label="Clear" >
+                  <mat-icon>close</mat-icon>
+                  </button> -->
+            </mat-form-field>
+        </div>
+
+        <span class="fill-remaining-space"></span>
 
         <mat-list-item >
           <mat-icon class ="vap-icon">refresh</mat-icon>
@@ -92,4 +100,6 @@
     </div>
   
   </mat-sidenav-container>
-  
+  <div class="note-create">
+    <app-notes ></app-notes>
+  </div>
