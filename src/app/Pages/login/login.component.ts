@@ -7,6 +7,7 @@ import {
 MatSnackBarHorizontalPosition,
 MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private formBuilder:FormBuilder,private userservices: UserService,
     public snackBar: MatSnackBar, private route: Router) { 
     this.loginForm = this.formBuilder.group(
       {
@@ -58,6 +59,10 @@ export class LoginComponent implements OnInit {
         Email: this.loginForm.get('email')?.value+this.EmailTld,
         password: this.loginForm.get('password')?.value
       }
+      this.userservices.login(reqData).subscribe((data: any) => {
+        console.log(data);
+        this.snackBar.open("login Successful","Exit")
+      })
 
 
       // this.userSevice.login(reqData).subscribe(
