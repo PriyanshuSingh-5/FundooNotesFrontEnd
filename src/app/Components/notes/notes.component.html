@@ -1,34 +1,24 @@
 <p>notes works!</p>
-<mat-card class="cn-card ">
+<!-- <div class="title" (click)="openDialog(noteObj)">
+  {{noteObj["title"]}}
+</div>
+<div class="body" (click)="openDialog(noteObj)">
+  {{noteObj["body"]}}
+</div> -->
+<!-- <div class="iconsPanel">
+  <mat-icons-panel (moreMenuClicked)="receiveMoreMenu($event)" 
+                    (colorPalleteClicked)="receiveColorPallete($event)"
+                    (archiveClicked)="receiveArchieveClicked($event)"></mat-icon>
+  <div class="moremenu" *ngIf="moreMenuShow">
+    <mat-icon [inline] (deleteButtonEmitter)="receiveDeleteButtonClick($event)"></mat-icon>
+  </div>
+  <div class="colorPallete" *ngIf="colorPalleteShow">
+    <mat-icon [inline] (colorEmitter)="receiveColor($event)"></mat-icon>
+  </div> -->
+  <div class= "createNote">
+    <div class="takeNote" *ngIf="!takeNoteExpanded" (click)= "takeNote"></div>
+    <h3>Take a note</h3>
+  </div>
+  <app-createnote (closeClickEvent)="receiveCloseClick($event)"></app-createnote>
 
-    <div class="card-title" >
-        <input class="title-in font" matInput placeholder="Title" id="title" #title >
-        <div class="pin-div"  matTooltip="Pin note" matTooltipPosition='below'>
-            <div role="button" class="pin" > 
-            </div>
-        </div>
-    </div>
 
-    <!-- <div class="iconsPanel">
-        <button mat-button class="material-icons-outlined iconClass">
-          <mat-icon [inline]="true">notification_add</mat-icon>
-        </button>
-        <button mat-button class="material-icons-outlined iconClass">
-          <mat-icon [inline]="true">person_add</mat-icon>
-        </button>
-        <button mat-button class="material-icons-outlined iconClass" (click)="onColorPalleteClick()">
-          <mat-icon [inline]="true">palette</mat-icon>
-        </button>
-         <button mat-button class="material -->
-        <!-- <button mat-button class="material-icons-outlined iconClass" >
-          <mat-icon [inline]="true">photo</mat-icon>
-        </button>
-        <button mat-button class="material-icons-outlined iconClass" (click)="onArchieveClick()">
-          <mat-icon [inline]="true">archive</mat-icon>
-        </button>
-        <button mat-button class="material-icons-outlined iconClass" (click)="onMoreMenuClick()">
-          <mat-icon [inline]="true">more_vert</mat-icon>
-        </button>
-    </div>
-
-</mat-card> --> 

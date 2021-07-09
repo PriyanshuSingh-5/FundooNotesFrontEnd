@@ -17,10 +17,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { NotesComponent } from './Components/notes/notes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatenoteComponent } from './Components/createnote/createnote.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    NotesComponent
+    NotesComponent,
+    CreatenoteComponent
     
   ],
   imports: [
@@ -48,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatDialogModule,
     MatSnackBarModule,
     HttpClientModule
   ],

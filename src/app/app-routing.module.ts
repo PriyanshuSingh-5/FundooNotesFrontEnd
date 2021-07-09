@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { NotesComponent } from './Components/notes/notes.component';
 
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'reset-password',component: ResetPasswordComponent},
   {path: 'dashboard', component: DashboardComponent,children:[
-    {path: 'notes',component: NotesComponent}
+    {path: 'notes',component: NotesComponent},
+    {path: 'createnote', component: CreatenoteComponent}
     
     ]}
   
