@@ -1,5 +1,4 @@
 <p>dashboard works!</p>
-
 <mat-sidenav-container autosize>
     <mat-sidenav #sidenav mode="side" opened="true">
       <mat-nav-list>
@@ -25,8 +24,6 @@
           <span *ngIf="isExpanded">edit Label </span>
         </mat-list-item>
   
-        
-
         <mat-list-item >
           <span class="material-icons-outlined">archive</span>
           <span *ngIf="isExpanded">Archive</span>
@@ -51,8 +48,6 @@
           <-- <span class="material-icons-outlined">search</span> -->
           <!-- <mat-icon class ="My-icon">search</mat-icon>
         </mat-list-item>  -->
-
-        
 
         <div>
           <mat-form-field class="Search" appearance="outline" #search>
@@ -89,8 +84,6 @@
         <span class="material-icons-outlined">account_circle</span>
       </mat-list-item>
     
-
-     
         <!-- <mat-list-item [routerLink]="'dashboard'">
           <mat-icon mat-list-icon >delete</mat-icon>
           <span *ngIf="isExpanded">Bin</span>
@@ -100,6 +93,9 @@
     </div>
   
   </mat-sidenav-container>
-  <div class="note-create">
-    <app-notes ></app-notes>
-  </div>
+  <!-- <mat-sidenav-content class="container"> -->
+  
+    <div class="note-create">
+      <!-- <app-createnote (messageEvent)="receiveMessage($event)" ></app-createnote> -->
+    </div>
+  

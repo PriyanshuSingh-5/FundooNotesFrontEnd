@@ -1,23 +1,13 @@
 <p>createnote works!</p>
-<div fxLayoutAlign="center center">
-  <mat-card *ngIf="!isPopUp" (click)="openCard()">
-    <div>
-      <input
-        autocomplete="off"
-        autofocus
-        matInput
-        placeholder="Take a note.."
-        type="text"
-      />
-    </div>
-  </mat-card>
-<!-- <form [formGroup]="createNoteForm" class="example-form">
+
+
+<form [formGroup]="createNoteForm" class="example-form">
     <div class="title">
         <textarea matInput placeholder="Title" formControlName="title" class="form-control" ></textarea>
 
       </div>
       <div class="textOfNote">
-        <textarea matInput placeholder="Take a note..." *ngIf="!takeNoteExpanded" (click)= "takeNote"></textarea>
+        <textarea matInput placeholder="Take a note..." *ngIf="!takeNoteExpanded" ></textarea>
       </div>
       <div class="icons-and-button">
 
@@ -31,18 +21,16 @@
              <button mat-button class="material-icons-outlined iconClass" >
               <mat-icon [inline]="true">palette</mat-icon>
             </button>
-            <button mat-button class="material">
-         <button mat-button class="material-icons-outlined iconClass" >
-              <mat-icon [inline]="true">photo</mat-icon>
-            </button>
+            
             <button mat-button class="material-icons-outlined iconClass" >
               <mat-icon [inline]="true">archive</mat-icon>
             </button>
             <button mat-button class="material-icons-outlined iconClass" >
               <mat-icon [inline]="true">more_vert</mat-icon>
             </button>
-        </div> 
+        </div>
+        
        
-       <button mat-flat-button class="buttonNext" >Close</button>
-      </div>
-    </form>  -->
+        <button mat-flat-button class="buttonNext" >Close</button>
+      </div> 
+    </form> 

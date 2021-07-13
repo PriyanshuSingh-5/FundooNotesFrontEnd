@@ -66,4 +66,13 @@ mat-sidenav-container {
   {
     padding: 0 20px;
   }
-  
+  .mat-sidenav-content
+  {
+background-color: white
+  } 
+  .th{
+    min-width: 232px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+  }

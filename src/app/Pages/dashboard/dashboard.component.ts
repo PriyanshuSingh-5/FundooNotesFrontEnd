@@ -1,7 +1,12 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit,  ChangeDetectorRef,  Directive, ElementRef, HostListener,  OnChanges,  QueryList, Renderer2, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
+import { MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
+import {Router,ActivatedRoute,ParamMap} from '@angular/router';
+
 import { NotesComponent } from 'src/app/Components/notes/notes.component';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,44 +17,12 @@ import { NotesComponent } from 'src/app/Components/notes/notes.component';
  export class DashboardComponent implements OnInit {
 
   isExpanded: boolean = false;
-
-
-//   @ViewChild(MatSidenav)
-//  sidenav!: MatSidenav;
-
-//   constructor( private observer: BreakpointObserver) { }
-
+  updating: boolean = false;
+  
+  constructor(private renderer: Renderer2, private elRef:ElementRef, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public route: Router) {
+    
+  }
+  
   ngOnInit(): void {
   }
-//   ngAfterViewInit() {
-//     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-//       if (res.matches) {
-//         this.sidenav.mode = 'over';
-//         this.sidenav.close();
-//       } else {
-//         this.sidenav.mode = 'side';
-//         this.sidenav.open();
-//       }
-//     });
-
-
-// }
-
-// export class DashboardComponent {
-//   @ViewChild(MatSidenav)
-//  sidenav!: MatSidenav;
-
-//   constructor(private observer: BreakpointObserver) {}
-
-//   ngAfterViewInit() {
-//     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-//       if (res.matches) {
-//         this.sidenav.mode = 'over';
-//         this.sidenav.close();
-//       } else {
-//         this.sidenav.mode = 'side';
-//         this.sidenav.open();
-//       }
-//     });
-//   }
-}
+  }
