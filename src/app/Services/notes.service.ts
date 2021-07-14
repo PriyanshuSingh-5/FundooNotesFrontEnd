@@ -6,12 +6,28 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NotesService {
-headers = new HttpHeaders()
-  .set('Authorization', 'Bearer '+localStorage.getItem('FunDooNotesJWT')); 
-  options = { headers: this.headers };
-  constructor(private httpService : HTTPService) { }
-  createNote(data: any){
-    return this.httpService.post('api/Notes/AddNote', data,{ headers: this.headers })
+  constructor(private http : HTTPService) { }
+
+  headers = new HttpHeaders()
+  .set('Authorization', 'Bearer '+localStorage.getItem('FunDooJwt')); 
+   options = { headers: this.headers };
   
+
+  createNote(data: any) {
+    console.log(" data in user services ", data );
+    return this.http.post('/Notes', data, this.options);
   }
-}
+  // static url = 'https://localhost:44341/api/';
+  // createNote = (data: any) => {
+  //   return this.http.post(`${NotesService.url}Notes`,data)
+  // };
+
+  // createNote(data: any){
+  //   console.log("data in note service",data);
+  //   return this.http.post('/api/Notes',data);
+  // }
+
+  // getAllNotes(){
+  //   return this.http.get('/api/Note/Details');
+  // }
+  }

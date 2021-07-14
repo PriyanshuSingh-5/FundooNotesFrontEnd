@@ -11,31 +11,31 @@ import { NotesService } from 'src/app/Services/notes.service';
   styleUrls: ['./createnote.component.scss']
 })
 export class CreatenoteComponent implements OnInit {
-  createNoteForm: FormGroup = new FormGroup ({title:new FormControl, description: new FormControl});
-  takeNoteExpanded: boolean = false;
+  isOpen = true;
   title=''
   description=''
-  
-
-  constructor(private formBuilder: FormBuilder, private noteService : NotesService) { 
-    createNoteForm: FormGroup;
+  hide = true;
+  setColor='';
+  click() {
+    this.isOpen = true;
   }
 
+  constructor(private noteservice : NotesService) { }
+  @Output() messageEvent = new EventEmitter<string>();
+
   ngOnInit(): void {
-    
-}
+  }
 
-Create = (createNoteForm: { title: any; description: any }) => {
-  let data={
-    title:this.title,
-    description:this.description
-  } 
-  console.log(" add note data ", data);
-  this.noteService.createNote(data).subscribe((response)=>{
-    console.log(response);
-    let message="note created successfull"
-    // this.messageEvent.emit(message);
-  })
+  addNote(){
+    let data={
+      header:this.title,
+      body:this.description
+    } 
+    console.log(" add note data ", data);
+    this.noteservice.createNote(data).subscribe((response)=>{
+      console.log(response);
+      let message="note created successfull"
+      this.messageEvent.emit(message);
+    })
+  }
 }
-}
-

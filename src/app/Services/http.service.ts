@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HTTPService {
+  get: any;
 
   constructor(private http: HttpClient) { }
 
@@ -12,4 +13,17 @@ export class HTTPService {
   {
     return this.http.post(url, data, isHeaderRequired && headers);
   }
+  // get(url: any){
+  //   // this.token=localStorage.getItem('token');
+  //   var currentUser = JSON.parse(localStorage.getItem('user'));
+  //    var token = currentUser.token; 
+  //    let options={
+  //      headers:new HttpHeaders({
+  //        'Content-Type': 'application/json',
+  //        'Authorization':token
+  //      })
+  //    }
+  //  return this.http.get(this.url+url);
+  //  }
+ 
 }

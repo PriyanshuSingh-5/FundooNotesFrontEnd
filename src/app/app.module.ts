@@ -24,6 +24,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { NotesComponent } from './Components/notes/notes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
+import { DisplayComponent } from './Components/display/display.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CreatenoteComponent } from './Components/createnote/createnote.componen
     ResetPasswordComponent,
     DashboardComponent,
     NotesComponent,
-    CreatenoteComponent
+    CreatenoteComponent,
+    DisplayComponent
     
   ],
   imports: [
