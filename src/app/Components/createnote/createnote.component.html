@@ -1,36 +1,33 @@
-<p>createnote works!</p>
+<form [formGroup]="createNoteForm" class="example-form" (ngSubmit)= "Create(createNoteForm.value)" *ngIf="createNoteForm">
+  <div class="title">
+      <textarea matInput placeholder="Title" formControlName="title" class="form-control"  ></textarea>
 
+    </div>
+    <div class="textOfNote">
+      <textarea matInput placeholder="Take a note..." formControlName="description" *ngIf="!takeNoteExpanded" ></textarea>
+    </div>
+    <div class="icons-and-button">
 
-<form [formGroup]="createNoteForm" class="example-form">
-    <div class="title">
-        <textarea matInput placeholder="Title" formControlName="title" class="form-control" ></textarea>
-
+      <div class="iconsPanel">
+          <button mat-button class="material-icons-outlined iconClass">
+            <mat-icon [inline]="true">notification_add</mat-icon>
+          </button>
+          <button mat-button class="material-icons-outlined iconClass">
+            <mat-icon [inline]="true">person_add</mat-icon>
+          </button>
+           <button mat-button class="material-icons-outlined iconClass" >
+            <mat-icon [inline]="true">palette</mat-icon>
+          </button>
+          
+          <button mat-button class="material-icons-outlined iconClass" >
+            <mat-icon [inline]="true">archive</mat-icon>
+          </button>
+          <button mat-button class="material-icons-outlined iconClass" >
+            <mat-icon [inline]="true">more_vert</mat-icon>
+          </button>
       </div>
-      <div class="textOfNote">
-        <textarea matInput placeholder="Take a note..." *ngIf="!takeNoteExpanded" ></textarea>
-      </div>
-      <div class="icons-and-button">
-
-        <div class="iconsPanel">
-            <button mat-button class="material-icons-outlined iconClass">
-              <mat-icon [inline]="true">notification_add</mat-icon>
-            </button>
-            <button mat-button class="material-icons-outlined iconClass">
-              <mat-icon [inline]="true">person_add</mat-icon>
-            </button>
-             <button mat-button class="material-icons-outlined iconClass" >
-              <mat-icon [inline]="true">palette</mat-icon>
-            </button>
-            
-            <button mat-button class="material-icons-outlined iconClass" >
-              <mat-icon [inline]="true">archive</mat-icon>
-            </button>
-            <button mat-button class="material-icons-outlined iconClass" >
-              <mat-icon [inline]="true">more_vert</mat-icon>
-            </button>
-        </div>
-        
-       
-        <button mat-flat-button class="buttonNext" >Close</button>
-      </div> 
-    </form> 
+      
+     
+      <button mat-flat-button class="buttonNext"  >Close</button>
+    </div> 
+  </form> 
