@@ -18,11 +18,23 @@ import { MediaMatcher } from '@angular/cdk/layout';
 
   isExpanded: boolean = false;
   updating: boolean = false;
+  NotesService: any;
+  notes: any;
+  deleteNoteId: any;
   
   constructor(private renderer: Renderer2, private elRef:ElementRef, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public route: Router) {
     
   }
   
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.updating)    
+    console.log(changes)
   }
+  ngOnInit(): void {
+       
+  }
+
+ 
+
+  
   }

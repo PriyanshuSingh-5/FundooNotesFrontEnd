@@ -28,12 +28,20 @@ export class CreatenoteComponent implements OnInit {
 
   addNote(){
     let data={
-      header:this.title,
-      body:this.description
+      userId: 4,
+      title:this.title,
+      body:this.description,
+      
+  reminder: "string",
+  color: "string",
+  isArchived: true,
+  isTrash: true,
+  isPin: true
     } 
     console.log(" add note data ", data);
     this.noteservice.createNote(data).subscribe((response)=>{
       console.log(response);
+      this.noteservice.GetActiveNotes();
       let message="note created successfull"
       this.messageEvent.emit(message);
     })

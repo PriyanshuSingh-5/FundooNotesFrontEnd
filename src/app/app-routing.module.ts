@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { DisplayComponent } from './Components/display/display.component';
 import { NotesComponent } from './Components/notes/notes.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
 
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './Pages/forgot-password/forgot-password.component';
@@ -15,10 +16,14 @@ const routes: Routes = [
    { path: 'login', component: LoginComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'reset-password',component: ResetPasswordComponent},
-  {path: 'dashboard', component: DashboardComponent,children:[
+  {path: 'dashboard', component: DashboardComponent,
+
+
+  children:[
     {path: 'notes',component: NotesComponent},
     {path: 'createnote', component: CreatenoteComponent},
-    {path: 'display',component: DisplayComponent}
+    {path: 'display',component: DisplayComponent},
+    {path : 'update-note',component: UpdateNoteComponent}
     
     ]}
   

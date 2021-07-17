@@ -6,22 +6,29 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NotesService {
+  options: any;
   constructor(private http : HTTPService) { }
 
-  headers = new HttpHeaders()
-  .set('Authorization', 'Bearer '+localStorage.getItem('FunDooJwt')); 
-   options = { headers: this.headers };
-  
+ 
+  static url = 'https://localhost:44341/';
+  createNote = (data: any) => {
+    return this.http.post(`${NotesService.url}api/Notes/add`,data)
+  };
 
-  createNote(data: any) {
-    console.log(" data in user services ", data );
-    return this.http.post('/Notes', data, this.options);
-  }
-  // static url = 'https://localhost:44341/api/';
-  // createNote = (data: any) => {
-  //   return this.http.post(`${NotesService.url}Notes`,data)
+  // getNotes = () => {
+  //   return this.http.get(`${NotesService.url}api/Notes`, data) 
+     
   // };
 
+  getAllNotes(){
+    return this.http.get(`${NotesService.url}api/Notes/GetNoteById`,data);
+  }
+
+  GetActiveNotes(){
+
+    return this.http.get('${NotesService.url}api/Notes/GetNoteById', this.options)
+  }
+  
   // createNote(data: any){
   //   console.log("data in note service",data);
   //   return this.http.post('/api/Notes',data);
@@ -31,3 +38,9 @@ export class NotesService {
   //   return this.http.get('/api/Note/Details');
   // }
   }
+
+
+function data(arg0: string, data: any) {
+  throw new Error('Function not implemented.');
+}
+

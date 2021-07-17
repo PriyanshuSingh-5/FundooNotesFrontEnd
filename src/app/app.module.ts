@@ -25,6 +25,8 @@ import { NotesComponent } from './Components/notes/notes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { DisplayComponent } from './Components/display/display.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import { IconComponent } from './Components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { DisplayComponent } from './Components/display/display.component';
     DashboardComponent,
     NotesComponent,
     CreatenoteComponent,
-    DisplayComponent
+    DisplayComponent,
+    UpdateNoteComponent,
+    IconComponent
     
   ],
   imports: [
@@ -52,7 +56,6 @@ import { DisplayComponent } from './Components/display/display.component';
     MatCardModule,
     MatDividerModule,
     MatIconModule,
-    
     MatToolbarModule,
     MatSidenavModule,
     MatDialogModule,

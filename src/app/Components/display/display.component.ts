@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NotesComponent } from '../notes/notes.component';
+import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
   selector: 'app-display',
@@ -26,7 +27,7 @@ export class DisplayComponent implements OnInit {
   }
 
   openDialog(card: any): void {
-    const dialogRef = this.dialog.open(NotesComponent, {
+    const dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: '360px',
       data: {note: card}
     });

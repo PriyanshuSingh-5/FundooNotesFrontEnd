@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NotesService } from 'src/app/Services/notes.service';
 
 @Component({
   selector: 'app-notes',
@@ -6,13 +7,37 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  @Input()
-  noteObj!: Object;
+  //note : UserRegister[];
+  notes :Array<any>=[];
+  
+  dataService: any;
 
 
-  constructor() { }
+
+  constructor(private noteservice:NotesService) { }
 
   ngOnInit(): void {
+    this.getAllNotes();
+    this.dataService.currentMessage.subscribe((msg: any)=>{
+      console.log(" message ", msg);
+      this.getAllNotes();
+      
+    })
   }
+  receiveMessage($event: any){
+    console.log(" message get all notee from craete note",$event);
+    this.getAllNotes();
+  }
+  getAllNotes(){
+    this.noteservice.getAllNotes().subscribe((respnse : any) => {
+      console.log("Response------------>",respnse);
+      this.notes = respnse;
+      console.log("---->",this.notes);
+      this.notes = this.notes.reverse();
+      console.log("Array Reversed",this.notes);
+    })
+   console.log("Printing the notes");
+    console.log(this.notes);
 
+}
 }

@@ -5,13 +5,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HTTPService {
-  get: any;
+  Get(arg0: string, options: any) {
+    throw new Error('Method not implemented.');
+  }
+  
 
   constructor(private http: HttpClient) { }
 
   post(url: string, data: any, isHeaderRequired: any = false, headers = null)
   {
     return this.http.post(url, data, isHeaderRequired && headers);
+  }
+  get(url: string, isHeaderRequired: any = false, headers = null) {
+    return this.http.get(url, isHeaderRequired && headers);
   }
   // get(url: any){
   //   // this.token=localStorage.getItem('token');

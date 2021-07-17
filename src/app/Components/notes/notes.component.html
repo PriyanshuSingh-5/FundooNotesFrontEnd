@@ -1,7 +1,3 @@
 <p>notes works!</p>
-<!-- <div class="title" (click)="openDialog(noteObj)">
-  {{noteObj["title"]}}
-</div>
-<div class="body" (click)="openDialog(noteObj)">
-  {{noteObj["body"]}}
-</div> -->
+<app-createnote (messageEvent)="receiveMessage($event)" ></app-createnote>
+<app-display [AllNotes]="notes" ></app-display>
