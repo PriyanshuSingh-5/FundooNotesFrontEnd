@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="main-div">
 <div fxLayoutAlign=" center">
   <mat-card   class="view1" *ngIf="isOpen " (click)="isOpen = !isOpen" [style.background-color]=setColor>
     <div  fxLayout="row" fxLayoutAlign="space-between center" class="HeaderButtons" >
@@ -60,7 +61,7 @@
         </div>
         <div class="icons">
           <div>
-            <button mat-icon-button matSuffix class="material-icons-outlined  ">
+            <button mat-icon-button matSuffix class="material-icons-outlined  " >
               <mat-icon >add_alert</mat-icon>
             </button>
           </div>
@@ -115,3 +116,4 @@
   </mat-card>
 </div>
 
+</div>

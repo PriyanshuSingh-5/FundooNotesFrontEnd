@@ -28,15 +28,15 @@ export class CreatenoteComponent implements OnInit {
 
   addNote(){
     let data={
-      userId: 4,
+      userId: 28,
       title:this.title,
       body:this.description,
       
-  reminder: "string",
-  color: "string",
-  isArchived: true,
-  isTrash: true,
-  isPin: true
+      reminder: "string",
+      color: "string",
+      isArchived: true,
+      isTrash: true,
+      isPin: true
     } 
     console.log(" add note data ", data);
     this.noteservice.createNote(data).subscribe((response)=>{
